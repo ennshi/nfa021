@@ -4,6 +4,15 @@
 	$content = new Content();
 	$content->collect('guides');
 	$guides = $content->show();
+	
+	$content2 = new Content();
+	$content2->select('offres', 'difficulty', '1');
+	$promenades = $content2->show();
+	$content2->select('offres', 'difficulty', '2');
+	$marches = $content2->show();
+	$content2->select('offres', 'difficulty', '3');
+	$montagnes = $content2->show();
+	
 ?>
 
 <!DOCTYPE html>
@@ -27,25 +36,25 @@
 						<a href=''>CONTACT</a>
 					  </li>
 					  <li class='pc'>
-						<a href=''>NOS OFFRES</a>
+						<a href='#offres-section'>NOS OFFRES</a>
 					  </li>
 					  <li class='pc'>
-						<a href=''>QUI SOMMES-NOUS?</a>
+						<a href='#section-main'>QUI SOMMES-NOUS?</a>
 					  </li>
 
 					  <li class='mobile'>
 						<a href=''><i class="far fa-comment-dots"></i></a>
 					  </li>
 					  <li class='mobile'>
-						<a href=''><i class="far fa-compass"></i></a>
+						<a href='#offres-section'><i class="far fa-compass"></i></a>
 					  </li>
 					  <li class='mobile'>
-						<a href=''><i class="fas fa-stream"></i></a>
+						<a href='#section-main'><i class="fas fa-stream"></i></a>
 					  </li>
 					</ul>
 				</nav>
 			</header>
-			<div class="section-main container">
+			<div id="section-main" class="container">
 				<?php echo "<h1>Les Pyr&eacute;n&eacute;es Vertes</h1>";?>
 				<h2>D&eacute;couvrez les Pyr&eacute;n&eacute;es en pensant &agrave; l'environment</h2>
 				<p id="description">"Les Pyr&eacute;n&eacute;es Vertes" est une agence de voyage situ&eacute;e &agrave; Pau, France. 
@@ -58,7 +67,7 @@
 			<img id="logo" src="img/logo.png" alt="logo" />
 		</div>
 
-		<section id="guides" class="container">
+		<section id="guides-section" class="container">
 			<div id="section-header">
 				<h2>NOTRE EQUIPE</h2>
 			</div>	
@@ -66,15 +75,63 @@
 				foreach($guides as $guide){
 				    echo "<div class='guides'>
                             <img width='150' src=\"img/guides/{$guide->photo}.jpg\" alt='photo of guide'>
-				            <p>{$guide->fname} {$guide->lname}<br>
-                            Experience: {$guide->experience} ans<br>
+				            <p><b>{$guide->fname} {$guide->lname}</b><br>
+                            Exp&eacute;rience: {$guide->experience} ans<br>
                             {$guide->description}</p>
 				        </div>";
 				}
 				?>
-			
-		</section>
 
+		</section>
+		<section id="offres-section" class="container">
+			<div id="section-header">
+				<h2>NOS OFFRES</h2>
+			</div>
+			<?php 
+			echo "<div class='heading-cats' id='promenades-head'>
+                    <h3>PROMENADES</h3>
+                    <p class='heading-cat-description'>Des randonn&eacute;es de moins de 3 heures et facile</p>
+                  </div>";
+			?>
+			<div class='cat-content' id='promenades'>
+            <?php foreach($promenades as $promenade){
+                    echo "<p><b>$promenade->nom</b><br>
+                        $promenade->description<br>
+                        Dur&eacute;e: {$promenade->duration} heures<br>
+                        Prix(par personne): {$promenade->prix}&euro;<br></p>";
+                   }
+            ?>
+            </div>
+            
+            <?php echo "<div class='heading-cats'id='marches-head'>
+                    <h3>MARCHES</h3>
+                    <p class='heading-cat-description'>Des randonn&eacute;es de moins de 6 heures et de difficult&eacute; moyenne</p>
+                  </div>";
+            ?>
+            <div class='cat-content' id='marches'>
+            <?php foreach($marches as $marche){
+                    echo "<p><b>$marche->nom</b><br>
+                        $marche->description<br>
+                        Dur&eacute;e: {$marche->duration} heures<br>
+                        Prix(par personne): {$marche->prix}&euro;<br></p>";
+                   }
+            ?>
+            </div>
+            <?php echo "<div class='heading-cats' id='montagnes-head'>
+                    <h3>MONTAGNES</h3>
+                    <p class='heading-cat-description'>Des randonn&eacute;es de plus de 6 heures et de haute difficult&eacute;</p>
+                  </div>";
+            ?>
+            <div class='cat-content' id='montagnes'>
+            <?php foreach($montagnes as $montagne){
+                    echo "<p><b>$montagne->nom</b><br>
+                        $montagne->description<br>
+                        Dur&eacute;e: {$montagne->duration} heures<br>
+                        Prix(par personne): {$montagne->prix}&euro;<br></p>";
+                   }
+            ?>
+            </div>
+		</section>
 		<div id="foot">
 			<h2>Contactez-nous</h2>
 			<div id="contacts">
@@ -85,6 +142,23 @@
 				</ul>
 			</div>
 		</div>
+		<script>
+		$(document).ready(function(){
+			  $("#promenades-head").click(function(){
+			    $("#promenades").toggle();
+			  });
+		});
+		$(document).ready(function(){
+			  $("#marches-head").click(function(){
+			    $("#marches").toggle();
+			  });
+		});
+		$(document).ready(function(){
+			  $("#montagnes-head").click(function(){
+			    $("#montagnes").toggle();
+			  });
+		});
+		</script>
 		<!-- <script>
 			$(function(){
 			  $("#foot").load("footer.html");

@@ -12,6 +12,13 @@ class Content {
         $this->_data = $check;
         return $this->_data;
     }
+    public function select($table, $field, $value){
+        $stmt = $this->_conn->conn->prepare("SELECT * FROM `{$table}` WHERE `{$field}`=?");
+        $stmt->execute(array($value));
+        $check = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $this->_data = $check;
+        return $this->_data;
+    }
     public function show(){
         return $this->_data;
     }
