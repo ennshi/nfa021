@@ -2,7 +2,7 @@
 class Config{
     static $confArray = array(
         'host' => '127.0.0.1',
-        'dbname' => 'registration_oop',
+        'dbname' => 'pyrenees',
         'user' => 'root',
         'pass' => '',
         'charset' => 'utf8'

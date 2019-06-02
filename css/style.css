@@ -17,11 +17,13 @@ body {
   position: relative;
   overflow-y: hidden;
   color: white;
+
 }
 .container {
 	max-width: 1180px;
 	text-align: center;
 	margin: 0 auto;
+	overflow-y: hidden;
 }
 #logo-container {
 	display: block;
@@ -34,18 +36,24 @@ body {
 	width: 20%;	
 }
 #section-header{
-	position: relative;
-	height: 50px;
+	display: block;
+	height: 70px;
 	width: 100%;
 	color: #09511C;
-}
 
+
+}
+.guides {
+	display: inline-grid;
+	width: 180px;
+	margin: 0 15px;
+}
 h1{
 	margin-top:60px;
 }
 #foot {
 	margin-top: 20px;
-	display: inline;
+	display: block;
 }
 #foot h2 {
 	display: inline-flex;
