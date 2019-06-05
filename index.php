@@ -33,7 +33,7 @@
 				<nav class='cf'>
 					<ul>
 					  <li class='pc'>
-						<a href=''>CONTACT</a>
+						<a href='chat_intro.html'>CONTACT</a>
 					  </li>
 					  <li class='pc'>
 						<a href='#offres-section'>NOS OFFRES</a>
@@ -43,7 +43,7 @@
 					  </li>
 
 					  <li class='mobile'>
-						<a href=''><i class="far fa-comment-dots"></i></a>
+						<a href='chat_intro.html'><i class="far fa-comment-dots"></i></a>
 					  </li>
 					  <li class='mobile'>
 						<a href='#offres-section'><i class="far fa-compass"></i></a>
@@ -55,7 +55,7 @@
 				</nav>
 			</header>
 			<div id="section-main" class="container">
-				<?php echo "<h1>Les Pyr&eacute;n&eacute;es Vertes</h1>";?>
+				<?php echo "<h1 id='h1-title'>Les Pyr&eacute;n&eacute;es Vertes</h1>";?>
 				<h2>D&eacute;couvrez les Pyr&eacute;n&eacute;es en pensant &agrave; l'environment</h2>
 				<p id="description">"Les Pyr&eacute;n&eacute;es Vertes" est une agence de voyage situ&eacute;e &agrave; Pau, France. 
 				L'activit&eacute; principale est l'organisation des randonn&eacute;es de diff&eacute;rents niveaux de difficult&eacute; et la dur&eacute;e dans les Pyr&eacute;n&eacute;es. 
@@ -99,10 +99,8 @@
                         $promenade->description<br>
                         Dur&eacute;e: {$promenade->duration} heures<br>
                         Prix(par personne): {$promenade->prix}&euro;<br></p>";
-                   }
-            ?>
+            }?>
             </div>
-            
             <?php echo "<div class='heading-cats'id='marches-head'>
                     <h3>MARCHES</h3>
                     <p class='heading-cat-description'>Des randonn&eacute;es de moins de 6 heures et de difficult&eacute; moyenne</p>
@@ -114,8 +112,7 @@
                         $marche->description<br>
                         Dur&eacute;e: {$marche->duration} heures<br>
                         Prix(par personne): {$marche->prix}&euro;<br></p>";
-                   }
-            ?>
+            }?>
             </div>
             <?php echo "<div class='heading-cats' id='montagnes-head'>
                     <h3>MONTAGNES</h3>
@@ -128,8 +125,7 @@
                         $montagne->description<br>
                         Dur&eacute;e: {$montagne->duration} heures<br>
                         Prix(par personne): {$montagne->prix}&euro;<br></p>";
-                   }
-            ?>
+           }?>
             </div>
 		</section>
 		<div id="foot">
@@ -147,13 +143,11 @@
 			  $("#promenades-head").click(function(){
 			    $("#promenades").toggle();
 			  });
-		});
-		$(document).ready(function(){
+		
 			  $("#marches-head").click(function(){
 			    $("#marches").toggle();
 			  });
-		});
-		$(document).ready(function(){
+
 			  $("#montagnes-head").click(function(){
 			    $("#montagnes").toggle();
 			  });

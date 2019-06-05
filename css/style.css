@@ -8,6 +8,10 @@ body {
 	margin: 0;
 	line-height: 2;
 }
+
+a{
+  text-decoration: none;
+}
 #showcase {
   margin: 0;
   padding: 0;
@@ -17,6 +21,7 @@ body {
   position: relative;
   overflow-y: hidden;
   color: white;
+  box-shadow: 0px 2px 5px #000000;
 
 }
 .container {
@@ -41,13 +46,19 @@ body {
 	width: 100%;
 	color: #09511C;
 }
+form{
+	margin-top: -10px;
+}
 .guides {
 	display: inline-grid;
 	width: 180px;
 	margin: 0 15px;
 }
-h1{
+#h1-title {
 	margin-top:120px;
+}
+h4{
+    color: #09511C;
 }
 .heading-cats{
 	margin: 8px 0;
@@ -67,18 +78,75 @@ h1{
 .cat-content{
 	display: none;
 }
-#foot {
-	margin-top: 20px;
+
+#chat-intro{
+  text-align: center;
+  background: url('../img/chat-intro.jpg') no-repeat center/cover;
+  width: 100%;
+  height: 120vh;
+}
+#main{
+	border-radius: 2px;
+	padding: 20px 0;
+	margin: 50px auto;
+	width: 540px;
+	background-color: white;
+	box-shadow: 0px 2px 10px #000000;
+}
+.side{
+	display: inline-grid;
+	width:250px;
+}
+
+#logo-chat{
+	display: block;
+	clear: both;
+	width: 150px;
+	margin: 0 auto;
+}
+.btn {
+  font-weight: bold;
+  margin: 20px auto;
+  background-color: #09511C;
+  color: white;
+  padding: 10px 0;
+  height: 40px;
+  width: 120px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  border-radius: 5px;
+}
+.btn:hover {background-color: #129E36;}
+.btn-side{
+	margin: 0px auto;
+}
+label{
+	margin-top: 8px;
 	display: block;
 }
+input{
+	height: 25px;
+	width: 200px;
+}
+.link-reg{
+	display: block;
+  	margin: 25px 0;
+  	color: #09511C;
+}
+#foot {
+	margin: 20px auto;
+	display: inline;
+	width: 100%;
+}
+
 #foot h2 {
-	display: inline-flex;
-	width: 20%;
-	margin-left: 20%;
+	display: inline-grid;
+	width:180px;
 }
 #contacts {
-	display: inline-flex;
-	width: 30%;
+	display: inline-grid;
+	width:200px;
 
 }
 nav {
@@ -116,9 +184,17 @@ nav a {
   }
 
 @media screen and (max-width: 540px){
-  h1 {
-	  font-size: 1.8em;
+  #h1-title {
 	  margin-top: 60px;
+  }
+  h1 {
+  	font-size: 1.8em;
+  }
+  h4{
+    font-size: 1.2em;
+  }
+  label{
+  	font-size: 1.2em;
   }
   .pc {
 	display: none;
@@ -130,12 +206,33 @@ nav a {
   a {
 	width: 30px;
 	margin: 0 20px;
+	display: block;
   }
   .heading-cat-description{
   	display: none;
   }
   #logo{
   	width: 150px;
+  }
+  #main{
+  	padding: 10px 0 30px 0;
+  	width: 250px;
+  	font-size: 0.8em;
+  }
+  .btn-side{
+  	margin-left: 45px;
+  }
+  #chat-intro{
+  	background: url('../img/chat-intro.jpg') no-repeat center/cover;
+  	width: 100%;
+  	height: 400hv;
+  }
+  .side{
+  	margin-top: -30px;
+  }
+  .link-reg{
+	width: 200px;
+	margin: 0 auto;
   }
 } // media
 
