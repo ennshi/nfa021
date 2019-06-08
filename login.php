@@ -24,9 +24,10 @@ if(count($_POST)>0){
             $_SESSION['auth_time'] = time();
             if($admin){
                 $_SESSION['permission'] = true;
+                $_SESSION['id'] = 0;
                 header('Location: admin.php');
             } else {
-                header('Location: index.php');
+                header('Location: account.php');
             }
         } else {
             $msg = "<ul><li>La connexion a echoue.</li></ul>";
@@ -44,48 +45,24 @@ if(count($_POST)>0){
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<link rel="stylesheet" href="css/style.css" type="text/css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-		<title>Les Pyrenees Vertes - agence de voyage</title>
+		<title>Les Pyrenees Vertes - S'inscrire</title>
 		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
 	</head>
 	<body>
 		<div id="chat-intro">
-			<header>
-				<nav class='cf'>
-					<ul>
-					  <li class='pc'>
-						<a href='chat_intro.html'>CONTACT</a>
-					  </li>
-					  <li class='pc'>
-						<a href='index.php#offres-section'>NOS OFFRES</a>
-					  </li>
-					  <li class='pc'>
-						<a href='index.php'>QUI SOMMES-NOUS?</a>
-					  </li>
-
-					  <li class='mobile'>
-						<a href='chat_intro.html'><i class="far fa-comment-dots"></i></a>
-					  </li>
-					  <li class='mobile'>
-						<a href='index.php#offres-section'><i class="far fa-compass"></i></a>
-					  </li>
-					  <li class='mobile'>
-						<a href='index.php'><i class="fas fa-stream"></i></a>
-					  </li>
-					</ul>
-				</nav>
-			</header>
+			<?php include('php/nav.php');?>
 			<section id="main">
 				<div id="section-header">
-            		<h1>Login</h1>
+            		<h1>Se connecter</h1>
 				</div>
 				<form action="" method="post">
                 	<label for="email">Email</label>
-                	<input type="email" name="email" id="email" value="" autocomplete="off"><br>
+                	<input class="login" type="email" name="email" id="email" value="" autocomplete="off"><br>
             	
                 	<label for="password">Mot de passe</label>
-                	<input type="password" name="pass" id="password" value="" autocomplete="off"><br>
+                	<input class="login" type="password" name="pass" id="password" value="" autocomplete="off"><br>
           
-                	<input type="submit" class="btn" value="Login">
+                	<input type="submit" class="btn" value="Se connecter">
                 	<a class="link-reg" href="registration.php">Creer un compte</a>
             	</form>
             	<div id="errors">
@@ -93,4 +70,6 @@ if(count($_POST)>0){
             	</div>
 			</section>
 		</div>
+		<?php include('php/footer.php');?>
+	</body>
 </html>

@@ -13,7 +13,7 @@ else {
     $pdf->AddPage();
     
     $pdf->SetTextColor(0);
-    $pdf->SetFillColor(35,149,205); 
+    $pdf->SetFillColor(120,120,120); 
     $pdf->SetFont('Arial','B',12);
     $pdf->Cell(20, 15, "Numero", 'LTR', 0, 'C', true);
     $pdf->Cell(50, 15, "Prenom", 'LTR', 0, 'C', true);

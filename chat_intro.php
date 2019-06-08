@@ -6,54 +6,31 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<link rel="stylesheet" href="css/style.css" type="text/css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-		<title>Les Pyrenees Vertes - agence de voyage</title>
+		<title>Les Pyrenees Vertes - Contacts</title>
 		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
 	</head>
 	<body>
 		<div id="chat-intro">
-			<header>
-				<nav class='cf'>
-					<ul>
-					  <li class='pc'>
-						<a href='chat_intro.html'>CONTACT</a>
-					  </li>
-					  <li class='pc'>
-						<a href='index.php#offres-section'>NOS OFFRES</a>
-					  </li>
-					  <li class='pc'>
-						<a href='index.php'>QUI SOMMES-NOUS?</a>
-					  </li>
-
-					  <li class='mobile'>
-						<a href='chat_intro.html'><i class="far fa-comment-dots"></i></a>
-					  </li>
-					  <li class='mobile'>
-						<a href='index.php#offres-section'><i class="far fa-compass"></i></a>
-					  </li>
-					  <li class='mobile'>
-						<a href='index.php'><i class="fas fa-stream"></i></a>
-					  </li>
-					</ul>
-				</nav>
-			</header>
+		<?php include('php/nav.php');?>
 			<section id="main">
 				<div id="section-header">
 					<h2>POUR NOUS-CONTACTER</h2>
 				</div>
 				<img id="logo-chat" src="img/logo.png" alt="logo" />
-				<div class="side">
+				<div class="side" id="left">
 					<p><br>+3300000000<br>
 					lespyreneesvertes@gmail.com<br>
 					65 av. des Fleurs, Pau, 64000, France<br>
 				    <p>
 				</div>
 				<div class="side">
-					<h4>Accès au chat</h4>
+					<h4>Acc&egrave;s au chat</h4>
 					<a href="registration.php"><button class="btn btn-side">Enregistrer</button></a>
 					<p>ou</p>
 					<a href="login.php"><button class="btn btn-side">Se connecter</button></a>
 				</div>
 			</section>
 		</div>
+		<?php include('php/footer.php');?>
 	</body>
 </html>

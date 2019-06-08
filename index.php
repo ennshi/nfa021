@@ -27,13 +27,12 @@
 		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
 	</head>
 	<body>
-
 		<div id="showcase">
 			<header>
 				<nav class='cf'>
 					<ul>
 					  <li class='pc'>
-						<a href='chat_intro.html'>CONTACT</a>
+						<a href='chat_intro.php'>CONTACT</a>
 					  </li>
 					  <li class='pc'>
 						<a href='#offres-section'>NOS OFFRES</a>
@@ -43,7 +42,7 @@
 					  </li>
 
 					  <li class='mobile'>
-						<a href='chat_intro.html'><i class="far fa-comment-dots"></i></a>
+						<a href='chat_intro.php'><i class="far fa-comment-dots"></i></a>
 					  </li>
 					  <li class='mobile'>
 						<a href='#offres-section'><i class="far fa-compass"></i></a>
@@ -58,8 +57,8 @@
 				<?php echo "<h1 id='h1-title'>Les Pyr&eacute;n&eacute;es Vertes</h1>";?>
 				<h2>D&eacute;couvrez les Pyr&eacute;n&eacute;es en pensant &agrave; l'environment</h2>
 				<p id="description">"Les Pyr&eacute;n&eacute;es Vertes" est une agence de voyage situ&eacute;e &agrave; Pau, France. 
-				L'activit&eacute; principale est l'organisation des randonn&eacute;es de diff&eacute;rents niveaux de difficult&eacute; et la dur&eacute;e dans les Pyr&eacute;n&eacute;es. 
-				En plus de fournir un niveau de service &eacute;lev&eacute;, notre valeur est la pr&eacute;occupation l'&eacute;cologie et le respect des populations locales.
+				L'activit&eacute; principale est l'organisation de randonn&eacute;es de diff&eacute;rents niveaux de difficult&eacute; et dur&eacute;e dans les Pyr&eacute;n&eacute;es. 
+				En plus de fournir un niveau de service &eacute;lev&eacute;, nos valeurs sont la pr&eacute;occupation &eacute;cologique et le respect des populations locales.
 				</p>
 			</div>
 		</div>
@@ -75,9 +74,9 @@
 				foreach($guides as $guide){
 				    echo "<div class='guides'>
                             <img width='150' src=\"img/guides/{$guide->photo}.jpg\" alt='photo of guide'>
-				            <p><b>{$guide->fname} {$guide->lname}</b><br>
-                            Exp&eacute;rience: {$guide->experience} ans<br>
-                            {$guide->description}</p>
+				            <h4>{$guide->fname} {$guide->lname}</h4>
+                            <p><span class=\"description\"><b>Exp&eacute;rience:</b> {$guide->experience} ans<br>
+                            {$guide->description}</span></p>
 				        </div>";
 				}
 				?>
@@ -95,10 +94,11 @@
 			?>
 			<div class='cat-content' id='promenades'>
             <?php foreach($promenades as $promenade){
-                    echo "<p><b>$promenade->nom</b><br>
-                        $promenade->description<br>
-                        Dur&eacute;e: {$promenade->duration} heures<br>
-                        Prix(par personne): {$promenade->prix}&euro;<br></p>";
+                    echo "<h4>$promenade->nom</h4><br>
+                        <p>$promenade->description<br>
+                        <b>Location:</b> {$promenade->location} <br>
+                        <b>Dur&eacute;e:</b> {$promenade->duration} heures<br>
+                        <b>Prix(par personne):</b> {$promenade->prix}&euro;<br></p>";
             }?>
             </div>
             <?php echo "<div class='heading-cats'id='marches-head'>
@@ -108,10 +108,11 @@
             ?>
             <div class='cat-content' id='marches'>
             <?php foreach($marches as $marche){
-                    echo "<p><b>$marche->nom</b><br>
-                        $marche->description<br>
-                        Dur&eacute;e: {$marche->duration} heures<br>
-                        Prix(par personne): {$marche->prix}&euro;<br></p>";
+                    echo "<h4>$marche->nom</h4><br>
+                        <p>$marche->description<br>
+                        <b>Location:</b> {$marche->location} <br>
+                        <b>Dur&eacute;e:</b> {$marche->duration} heures<br>
+                        <b>Prix(par personne):</b> {$marche->prix}&euro;<br></p>";
             }?>
             </div>
             <?php echo "<div class='heading-cats' id='montagnes-head'>
@@ -121,23 +122,15 @@
             ?>
             <div class='cat-content' id='montagnes'>
             <?php foreach($montagnes as $montagne){
-                    echo "<p><b>$montagne->nom</b><br>
+                    echo "<h4>$montagne->nom</h4><br>
                         $montagne->description<br>
-                        Dur&eacute;e: {$montagne->duration} heures<br>
-                        Prix(par personne): {$montagne->prix}&euro;<br></p>";
+                        <b>Location:</b> {$montagne->location} <br>
+                        <b>Dur&eacute;e:</b> {$montagne->duration} heures<br>
+                        <b>Prix(par personne):</b> {$montagne->prix}&euro;<br></p>";
            }?>
             </div>
 		</section>
-		<div id="foot">
-			<h2>Contactez-nous</h2>
-			<div id="contacts">
-				<ul>
-					<li>+3300000000</li>
-					<li>lespyreneesvertes@gmail.com</li>
-					<li>65 av. des Fleurs, Pau, 64000, France</li>
-				</ul>
-			</div>
-		</div>
+		<?php include('php/footer.php');?>
 		<script>
 		$(document).ready(function(){
 			  $("#promenades-head").click(function(){
@@ -153,11 +146,5 @@
 			  });
 		});
 		</script>
-		<!-- <script>
-			$(function(){
-			  $("#foot").load("footer.html");
-			});
-		</script> -->
-		<script src="js/main.js"></script>
 	</body>
 </html> 

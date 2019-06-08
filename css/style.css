@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 html, body {
 	width:100%;
-	height:100%;
+	touch-action: manipulation;
 }
 body {
 	font-family: 'Roboto', sans-serif;
@@ -12,6 +12,7 @@ body {
 a{
   text-decoration: none;
 }
+
 #showcase {
   margin: 0;
   padding: 0;
@@ -54,11 +55,27 @@ form{
 	width: 180px;
 	margin: 0 15px;
 }
+.guides img{
+	margin-left: 5px;
+}
 #h1-title {
 	margin-top:120px;
+	letter-spacing: .05em;
+}
+h2{
+	letter-spacing: .05em;
 }
 h4{
     color: #09511C;
+}
+#guides-section h4{
+	margin-bottom: -10px;
+}
+#guides-section .description{
+	font-size: 0.9em;
+}
+.heading-cats h3{
+	letter-spacing: .1em;
 }
 .heading-cats{
 	margin: 8px 0;
@@ -78,12 +95,14 @@ h4{
 .cat-content{
 	display: none;
 }
-
+.cat-content h4{
+	margin-bottom: -40px;
+}
 #chat-intro{
   text-align: center;
   background: url('../img/chat-intro.jpg') no-repeat center/cover;
   width: 100%;
-  height: 120vh;
+  height: 160vh;
 }
 #main{
 	border-radius: 2px;
@@ -97,6 +116,7 @@ h4{
 	display: inline-grid;
 	width:250px;
 }
+
 
 #logo-chat{
 	display: block;
@@ -125,30 +145,24 @@ label{
 	margin-top: 8px;
 	display: block;
 }
-input{
+input {
 	height: 25px;
 	width: 200px;
+	border: none;
+  	background: #f1f1f1;
+  	padding: 5px;
+  	margin: 3px 0 5px 0;
+}
+.login {
+	height: 35px;
 }
 .link-reg{
 	display: block;
   	margin: 25px 0;
   	color: #09511C;
 }
-#foot {
-	margin: 20px auto;
-	display: inline;
-	width: 100%;
-}
 
-#foot h2 {
-	display: inline-grid;
-	width:180px;
-}
-#contacts {
-	display: inline-grid;
-	width:200px;
-
-}
+/*navigation*/
 nav {
 	height: 50px;
 	width: 100%;
@@ -176,13 +190,222 @@ nav a {
 	text-decoration: none;
 	padding: 10px 0;
 	color: gray;
-
+}
+nav a:hover{
+	color:  #129E36;
+}
+/*admin panel*/
+#admin-head{
+  display: inline-grid;
+  margin-right: 80px;
+  padding-left: 50px;	
+}
+#admin-header{
+	display: block;
+	padding-top: 50px;
+	width: 100%;
+	color: #09511C;
+	border-bottom: 2px dashed gray;
 }
 
+.admin-btn{
+	display: inline-grid;
+	margin-right: 20px;
+	background-color: #808080;
+	width: 120px;
+}
+table {
+  border-collapse: collapse;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+#chat {
+  width: 60%;
+  margin-top: 20px;
+}
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+  padding-top: 20px;
+  font-weight: bold;
+  color: #09511C;
+}
+
+table tr {
+  background-color: rgba(247,247,247, 1);
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #c8c8c8;
+}
+tr:nth-child(even){background-color: #f2f2f2;}
+tr:hover {background-color: #ddd;}
+input[type=button] {
+  background-color: #09511C;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  font-weight: bold;
+}
+input[type=button]:hover {
+  background-color: #129E36;
+
+}
+/*form for modify*/
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 20px;
+  margin-left: 40%;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+.form-container {
+  width: 250px;
+  text-align: center; 
+  padding: 10px;
+  background-color: white;
+}
+.form-container input[type=text], .form-container input[type=email] {
+  width: 80%;
+}
+.form-container input[type=text]:hover, .form-container input[type=email]:hover, .login:hover, .reg:hover{
+  background-color: #c4c4c4;
+}
+.form-container .btn {
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  margin-bottom:10px;
+  font-weight: bold;
+}
+
+/*account*/
+#messages table{
+	display: block;
+	height:200px;
+	border-collapse: collapse;
+	overflow-y:scroll;
+}
+#messages tr{background-color: rgba(247,247,247,0.8);}
+#messages td{
+	padding: 8px;
+	width-max: 200px;
+	height: auto;
+}
+#text{
+	display: block;
+	margin: 20px auto;
+	padding: 5px 10px;
+	height: 30px;
+	width: 250px;
+}
+.sender{
+	color: #09511C;
+	font-weight: bold;
+}
+/*footer*/
+.footer-distributed{
+	background-color: #393A39;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: normal 16px sans-serif;
+	padding: 20px 50px;
+}
+#offres-section{
+	margin-bottom: 40px;
+}
+.footer-distributed .footer-left p{
+	color:  #f7f7f7;
+	font-size: 14px;
+	margin: 0;
+}
+
+.footer-distributed .footer-right{
+	float: right;
+	max-width: 180px;
+}
+
+.footer-distributed .footer-right a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	background-color:  #393A39;
+	border-radius: 2px;
+	font-size: 1.3em;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+	margin-left: 3px;
+
+}
+/*responsive design*/
  .mobile {
 	  display: none;
   }
+@media screen and (max-width: 900px){
+  /*table*/
+  table {
+    border: 0;
+  }
 
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    display: block;
+    margin-bottom: .6em;
+  }
+  
+  table td {
+    display: block;
+    font-size: 0.9em;
+    text-align: right;
+  }
+  table .but {
+    text-align: center;
+  }
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  table td:last-child {
+    border-bottom: 0;
+  }
+  #chat {
+    width: 90%;
+  }
+}
 @media screen and (max-width: 540px){
   #h1-title {
 	  margin-top: 60px;
@@ -202,6 +425,7 @@ nav a {
   .mobile {
 	display: inline-flex;
     width: 33%;
+    font-size: 1.3em;
   }
   a {
 	width: 30px;
@@ -229,10 +453,53 @@ nav a {
   }
   .side{
   	margin-top: -30px;
+  	text-align: center;
   }
   .link-reg{
 	width: 200px;
 	margin: 0 auto;
   }
-} // media
+  #admin-head{
+  	width: 100%;
+    display: block;
+    margin: 10px 60px;
 
+  }
+  .admin-btn{
+  	display: block;
+  	position: relative;
+  	margin: 20px 80px;
+  	width: 200px;
+  }
+  .form-popup {
+  	margin: 0 auto;
+  	width: 100%;
+  }
+  .form-container {
+  	width: 100%;
+  }
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-right{
+	text-align: center;
+
+  }
+  .footer-distributed .footer-right{
+	float: none;
+	margin: 0 auto 20px;
+  }
+
+} 
+@media screen and (max-width: 350px){
+	#admin-head{
+  	width: 100%;
+    display: block;
+    margin: 10px 5px;
+
+  }
+  .admin-btn{
+  	display: block;
+  	position: relative;
+  	margin: 20px 50px;
+  	width: 120px;
+  }
+}

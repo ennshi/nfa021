@@ -65,31 +65,7 @@ if(count($_POST)>0){
 	</head>
 	<body>
 		<div id="chat-intro">
-			<header>
-				<nav class='cf'>
-					<ul>
-					  <li class='pc'>
-						<a href='chat_intro.html'>CONTACT</a>
-					  </li>
-					  <li class='pc'>
-						<a href='index.php#offres-section'>NOS OFFRES</a>
-					  </li>
-					  <li class='pc'>
-						<a href='index.php'>QUI SOMMES-NOUS?</a>
-					  </li>
-
-					  <li class='mobile'>
-						<a href='chat_intro.html'><i class="far fa-comment-dots"></i></a>
-					  </li>
-					  <li class='mobile'>
-						<a href='index.php#offres-section'><i class="far fa-compass"></i></a>
-					  </li>
-					  <li class='mobile'>
-						<a href='index.php'><i class="fas fa-stream"></i></a>
-					  </li>
-					</ul>
-				</nav>
-			</header>
+		<?php include('php/nav.php');?>
 			<section id="main">
 				<div id="section-header">
             		<h1>S'inscrire</h1>
@@ -97,19 +73,19 @@ if(count($_POST)>0){
             	<form action="" method="post">
         		
         			<label for="nom">Nom</label>
-        			<input type="text" name="nom" id="nom" value="" autocomplete="off"><br>
+        			<input class="reg" type="text" name="nom" id="nom" value="" autocomplete="off"><br>
         		
-        			<label for="prenom">Prenom</label>
-        			<input type="text" name="prenom" id="prenom" value="" autocomplete="off"><br>
+        			<label for="prenom">Pr&eacute;nom</label>
+        			<input class="reg" type="text" name="prenom" id="prenom" value="" autocomplete="off"><br>
         		
         			<label for="password">Mot de passe</label>
-        			<input type="password" name="pass" id="password" autocomplete="off"><br>
+        			<input class="reg" type="password" name="pass" id="password" autocomplete="off"><br>
         		
-        			<label for="password2">Repeter le mot de passe</label>
-        			<input type="password" name="pass2" id="password2" autocomplete="off"><br>
+        			<label for="password2">R&eacute;p&eacute;ter le mot de passe</label>
+        			<input class="reg" type="password" name="pass2" id="password2" autocomplete="off"><br>
         		
         			<label for="email">Email</label>
-        			<input type="email" name="email" id="email" value="" autocomplete="off"><br>
+        			<input class="reg" type="email" name="email" id="email" value="" autocomplete="off"><br>
         		
         
         			<input type="submit" class="btn" value="Enregistrer">
@@ -118,7 +94,8 @@ if(count($_POST)>0){
         		<div id="errors">
         			<?=$msg; ?>
         		</div>
-			</section>
+			</section>			
 		</div>
+		<?php include('php/footer.php');?>
 	</body>
 </html>
