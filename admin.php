@@ -1,6 +1,8 @@
 <?php
 require_once 'php/init.php';
-if(empty($_SESSION['permission'])&&(time()-$_SESSION['auth_time'] > 100000)){
+if(empty($_SESSION['name'])){
+    header('Location: index.php');
+} else if(empty($_SESSION['permission'])&&(time()-$_SESSION['auth_time'] > 100000)){
     header('Location: php/logout.php');
 } else if(empty($_SESSION['permission'])&&(time()-$_SESSION['auth_time'] < 100000)) {
     header('Location: account.php');

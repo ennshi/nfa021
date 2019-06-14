@@ -1,7 +1,8 @@
 <?php
 require_once 'php/init.php';
-
-if(time()-$_SESSION['auth_time'] > 100000){
+if(empty($_SESSION['name'])){
+    header('Location: index.php');
+} else if(time()-$_SESSION['auth_time'] > 100000){
     header('Location: logout.php');
 } else if(isset($_SESSION['permission'])&&(time()-$_SESSION['auth_time'] < 100000)&&!isset($_GET['customer'])) {
     header('Location: admin.php');
@@ -16,8 +17,6 @@ if(time()-$_SESSION['auth_time'] > 100000){
     }
     $messages = $chat->data();
 }
-
-
 
 
 ?>
