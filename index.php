@@ -18,12 +18,14 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
 	<head>
+		<title>Les Pyrenees Vertes - agence de voyage</title>
 		<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="D&eacute;couvrez les Pyr&eacute;n&eacute;es en pensant &agrave; l'environment. Randonn&eacute;es et promenades dans les Pyr&eacute;n&eacute;es">
+		<meta name="keywords" content="randonnees pau,pyrenees randonees,montagnes pau">
 		<link rel="stylesheet" href="css/style.css" type="text/css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-		<title>Les Pyrenees Vertes - agence de voyage</title>
 		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
 	</head>
 	<body>
